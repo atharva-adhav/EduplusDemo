@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+</head>
+<body>
+    <h1>Student Data</h1>
+    <p><b>Name:</b> <%= user.name %> </p>
+    <p><b>Year:</b> <%= user.year %> </p>
+    <p><b>Department:</b> <%= user.department %> </p>
+    <p><b>Phone Number:</b> <%= user.phoneNumber %> </p>
+    <br><br>
+    <p><a href="/users/<%= user._id %>/edit">Edit</a></p>
+    <p><a href="/users/register">Home</a></p>
+</body>
+</html>

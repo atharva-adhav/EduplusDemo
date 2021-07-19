@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit Details</h1>
+    <form action="/users/<%= info.user._id %>?_method=PATCH" method="POST">
+        
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your Name" value="<%= info.user.name %>">
+        <br><br>
+        
+        <label for="year">Year</label>
+        <select name="year" id="year">
+            <% for(let year of info.years) { %>
+            <option value="<%= year %>" <%= info.user.year === year ? 'selected' : ''%> ><%= year %> </option>
+            <% } %>  
+        </select>
+        <br><br>
+        <label for="department">Department</label>
+        <select name="department" id="department">
+            <% for(let department of info.departments) {  %>
+           <option value="<%= department %>" <%= info.user.department === department ? 'selected' : ''%> ><%= department %></option>
+            <% } %>  
+        </select>
+        <br><br>
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" pattern="[0-9]{10}" name="phoneNumber" id="phoneNumber" placeholder="Enter your phone number" 
+            value="<%= info.user.phoneNumber %>">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p><a href="/users/<%= info.user._id %>">Cancel</a></p>
+</body>
+</html>
