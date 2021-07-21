@@ -4,16 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>User</title>
 </head>
 <body>
-    <h1>Student Data</h1>
-    <p><b>Name:</b> <%= user.name %> </p>
-    <p><b>Year:</b> <%= user.year %> </p>
-    <p><b>Department:</b> <%= user.department %> </p>
-    <p><b>Phone Number:</b> <%= user.phoneNumber %> </p>
-    <br><br>
-    <p><a href="/users/<%= user._id %>/edit">Edit</a></p>
-    <p><a href="/users/register">Home</a></p>
+<div class="container">
+    <section class="section">
+        <div class="navbar is-fixed-top has-background-info-dark">
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <p class="navbar-item title is-4" style="color: white;">
+                        Eduplus Demo
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h1 class="title">Student Data</h1>
+    <p class="content is-medium">
+        <b>Name:</b> &ensp; <%= user.name %>
+    </p>
+    <p class="content is-medium">
+        <b>Year:</b> &ensp; <%= user.year %>
+    </p>
+    <p class="content is-medium">
+        <b>Department:</b> &ensp; <%= user.department %>
+    </p>
+    <p class="content is-medium">
+        <b>Phone Number:</b> &ensp; <%= user.phoneNumber %>
+    </p>
+    <p class="content is-medium">
+        <a href="/users/<%= user._id %>/edit">Edit</a>
+        &emsp;
+        <a href="/users/register">Home</a>
+    </p>
+</div>
+
 </body>
 </html>

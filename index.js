@@ -89,5 +89,9 @@ app.patch('/users/:id', async (req, res) => {
     res.redirect(`/users/${ id }`);
 });
 
+app.get('/sandbox', (req, res) => {
+    res.render('users/sandbox');
+});
+
 
 app.listen(8080);

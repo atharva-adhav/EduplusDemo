@@ -5,12 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Error!</title>
 </head>
 
 <body>
-    <p>Username already taken. Enter another username.</p>
-    <p><a href="/users/register">Register</a> <a href="/users/login">Login</a></p>
+<div class="container">
+    <section class="section">
+        <div class="navbar is-fixed-top has-background-info-dark">
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <p class="navbar-item title is-4" style="color: white;">
+                        Eduplus Demo
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="block">
+        <p class="content is-medium">
+            Username already taken. Enter another username.
+        </p>
+    </div>
+    <div class="block">
+        <p class="content is-medium">
+            <a href="/users/register">Register</a>&emsp;
+            <a href="/users/login">Login</a>
+        </p>
+    </div>
+</div>
+
 </body>
 
 </html>
