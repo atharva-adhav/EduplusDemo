@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,39 +8,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>User</title>
 </head>
-<body>
-<div class="container">
-    <section class="section">
-        <div class="navbar is-fixed-top has-background-info-dark">
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <p class="navbar-item title is-4" style="color: white;">
-                        Eduplus Demo
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <h1 class="title">Student Data</h1>
-    <p class="content is-medium">
-        <b>Name:</b> &ensp; <%= user.name %>
-    </p>
-    <p class="content is-medium">
-        <b>Year:</b> &ensp; <%= user.year %>
-    </p>
-    <p class="content is-medium">
-        <b>Department:</b> &ensp; <%= user.department %>
-    </p>
-    <p class="content is-medium">
-        <b>Phone Number:</b> &ensp; <%= user.phoneNumber %>
-    </p>
-    <p class="content is-medium">
-        <a href="/users/<%= user.id %>/edit">Edit</a>
-        &emsp;
-        <a href="/users/register">Home</a>
-    </p>
-</div>
+<body>
+    <%- include('partials/navbar'); %>
+        <div class="container">
+
+
+            <h1 class="title">Student Data</h1>
+            <p class="content is-medium">
+                <b>Name:</b> &ensp; <%= user.name %>
+            </p>
+            <p class="content is-medium">
+                <b>Year:</b> &ensp; <%= user.year %>
+            </p>
+            <p class="content is-medium">
+                <b>Department:</b> &ensp; <%= user.department %>
+            </p>
+            <p class="content is-medium">
+                <b>Phone Number:</b> &ensp; <%= user.phoneNumber %>
+            </p>
+            <p class="content is-medium">
+                <a href="/users/<%= user.id %>/edit">Edit</a>
+                &emsp;
+                <a href="/users/register">Home</a>
+            </p>
+        </div>
 
 </body>
+
 </html>

@@ -13,6 +13,17 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
+app.get('/users/all', async (req, res) => {
+    let users;
+    try {
+        const usersQuery = await db.promise().query('SELECT * FROM userdatas');
+        users = usersQuery[0];
+    } catch (error) {
+        console.log(error);
+    }
+    res.render('users/all', { users });
+});
+
 app.get('/users/register', (req, res) => {
     res.render('users/register');
 });
@@ -20,9 +31,16 @@ app.get('/users/register', (req, res) => {
 app.post('/users/register', async (req, res) => {
     const { username, password } = req.body;
     console.log(`${username}  ${password}`);
+
+    if(!username || !password) {
+        res.render('users/userNameTaken');
+        return;
+    }
+
     let queryUserRes;
     try {
         const queryUser = await db.promise().query(`SELECT * FROM usernames WHERE username='${username}'`);
+        console.log(queryUser);
         queryUserRes = queryUser[0];
         console.log(queryUserRes);
     } catch (error) {
@@ -93,6 +111,7 @@ app.get('/users/:id', async (req, res) => {
     let user;
     try {
         const userQuery = await db.promise().query(`SELECT * FROM userdatas WHERE id='${ id }'`);
+        console.log(userQuery);
         user = userQuery[0][0];
     } catch (error) {
         console.log(error);
