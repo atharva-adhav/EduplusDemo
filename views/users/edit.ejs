@@ -25,7 +25,7 @@
     <div class="columns">
     <div class="column is-half">
         <h1 class="title">Edit Details</h1>
-        <form action="/users/<%= info.user._id %>?_method=PATCH" method="POST">
+        <form action="/users/<%= info.user.id %>?_method=PATCH" method="POST">
             <div class="field">
                 <label for="name" class="label">Name</label>
                 <input type="text" class="input" name="name" id="name" placeholder="Enter Name" value="<%= info.user.name %>">
@@ -59,7 +59,7 @@
             </div>
 
             <div class="field">
-                <label for="phoneNumber" class="label">Phone_Number</label>
+                <label for="phoneNumber" class="label">Phone Number</label>
                 <input type="tel" pattern="[0-9]{10}" class="input" name="phoneNumber" id="phoneNumber" placeholder="Enter Phone Number" 
                     value="<%= info.user.phoneNumber %>">
             </div>
@@ -74,7 +74,7 @@
         </div>
 
     <div class="block">
-        <a href="/users/<%= info.user._id %>" class="button is-danger">Cancel</a>
+        <a href="/users/<%= info.user.id %>" class="button is-danger">Cancel</a>
     </div>
     
 
