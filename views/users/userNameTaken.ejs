@@ -10,31 +10,22 @@
 </head>
 
 <body>
-<div class="container">
-    <section class="section">
-        <div class="navbar is-fixed-top has-background-info-dark">
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <p class="navbar-item title is-4" style="color: white;">
-                        Eduplus Demo
-                    </p>
-                </div>
+    <%- include('partials/navbar'); %>
+        <div class="container">
+
+
+            <div class="block">
+                <p class="content is-medium">
+                    Username invalid or already taken. Enter another username.
+                </p>
+            </div>
+            <div class="block">
+                <p class="content is-medium">
+                    <a href="/users/register">Register</a>&emsp;
+                    <a href="/users/login">Login</a>
+                </p>
             </div>
         </div>
-    </section>
-
-    <div class="block">
-        <p class="content is-medium">
-            Username already taken. Enter another username.
-        </p>
-    </div>
-    <div class="block">
-        <p class="content is-medium">
-            <a href="/users/register">Register</a>&emsp;
-            <a href="/users/login">Login</a>
-        </p>
-    </div>
-</div>
 
 </body>
 

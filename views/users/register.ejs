@@ -10,72 +10,48 @@
 </head>
 
 <body>
-<div class="container">
-    <section class="section">
-        <div class="navbar is-fixed-top has-background-info-dark">
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <p class="navbar-item title is-4" style="color: white;">
-                        Eduplus Demo
-                    </p>
+    <%- include('partials/navbar'); %>
+
+        <div class="container">
+
+            <div class="block">
+                <div class="columns">
+                    <div class="column is-2"></div>
+                    <div class="column is-8">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="content is-small">
+                                    Already Registered? <a class="is-info" href="/users/login">Login Here</a>
+                                </p>
+                                <p class="title content is-large has-text-centered">
+                                    Register User
+                                </p>
+
+                                <form action="/users/register" method="POST">
+                                    <div class="field">
+                                        <label for="username" class="label">Username</label>
+                                        <input type="text" class="input" name="username" id="username"
+                                            placeholder="Enter Name">
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="label">Password</label>
+                                        <input type="password" class="input" name="password" id="password"
+                                            placeholder="Enter Password">
+                                    </div>
+
+                                    <div class="field has-text-centered">
+                                        <button type="submit" class="button is-success is-center">Register</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="column is-2"></div>
                 </div>
             </div>
         </div>
-    </section>
-
-
-    <div class="block">
-        <div class="columns">
-            <div class="column is-2"></div>
-            <div class="column is-8">
-            <div class="card">
-                <div class="card-content">
-                    <p class="content is-small">
-                        Already Registered? <a class="is-info" href="/users/login">Login Here</a>
-                    </p>
-                    <p class="title content is-large has-text-centered">
-                        Register User
-                    </p>
-
-                <form action="/users/register" method="POST">
-                    <div class="field">
-                        <label for="username" class="label">Username</label>
-                        <input type="text" class="input" name="username" id="username" placeholder="Enter Name">
-                    </div>
-                
-                    <div class="field">
-                        <label class="label">Password</label>
-                        <input type="password" class="input" name="password" id="password" placeholder="Enter Password">
-                    </div>
-
-                    <div class="field has-text-centered">
-                        <button type="submit" class="button is-success is-center">Register</button>
-                    </div>
-                </form>
-                </div>
-
-            </div>
-            </div>
-            <div class="column is-2"></div>
-        </div>
-    </div>
-
-    
-    <!--
-    <form action="/users/register" method="POST">
-
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Enter username">
-        <br><br>
-
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
-        <br><br>
-
-        <button type="submit">Submit</button>
-    </form>
--->
-</div>
 </body>
 
 </html>

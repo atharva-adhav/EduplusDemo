@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,78 +8,75 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Edit</title>
 </head>
+
 <body>
-<div class="container">
-    <section class="section">
-        <div class="navbar is-fixed-top has-background-info-dark">
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <p class="navbar-item title is-4" style="color: white;">
-                        Eduplus Demo
-                    </p>
+
+    <%- include('partials/navbar'); %>
+        <div class="container">
+
+            <div class="block">
+                <div class="columns">
+                    <div class="column is-half">
+                        <h1 class="title">Edit Details</h1>
+                        <form action="/users/<%= info.user.id %>?_method=PATCH" method="POST">
+                            <div class="field">
+                                <label for="name" class="label">Name</label>
+                                <input type="text" class="input" name="name" id="name" placeholder="Enter Name"
+                                    value="<%= info.user.name %>">
+                            </div>
+
+                            <div class="field">
+                                <label for="year" class="label">Year</label>
+                                <p class="control">
+                                    <span class="select">
+                                        <select name="year" id="year">
+                                            <% for(let year of info.years) { %>
+                                                <option value="<%= year %>" <%=info.user.year===year ? 'selected' : ''
+                                                    %> ><%= year %>
+                                                </option>
+                                                <% } %>
+                                        </select>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="field">
+                                <label for="department" class="label">Department</label>
+                                <p class="control">
+                                    <span class="select">
+                                        <select name="department" id="department">
+                                            <% for(let department of info.departments) { %>
+                                                <option value="<%= department %>" <%=info.user.department===department
+                                                    ? 'selected' : '' %> ><%= department %>
+                                                </option>
+                                                <% } %>
+                                        </select>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div class="field">
+                                <label for="phoneNumber" class="label">Phone Number</label>
+                                <input type="tel" pattern="[0-9]{10}" class="input" name="phoneNumber" id="phoneNumber"
+                                    placeholder="Enter Phone Number" value="<%= info.user.phoneNumber %>">
+                            </div>
+
+                            <div class="field">
+                                <button type="submit" class="button is-success is-center">Save</button>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <div class="block">
-    <div class="columns">
-    <div class="column is-half">
-        <h1 class="title">Edit Details</h1>
-        <form action="/users/<%= info.user.id %>?_method=PATCH" method="POST">
-            <div class="field">
-                <label for="name" class="label">Name</label>
-                <input type="text" class="input" name="name" id="name" placeholder="Enter Name" value="<%= info.user.name %>">
-            </div>
-        
-            <div class="field">
-                <label for="year" class="label">Year</label>
-                <p class="control">
-                    <span class="select">
-                        <select name="year" id="year">
-                            <% for(let year of info.years) { %>
-                            <option value="<%= year %>" <%=info.user.year===year ? 'selected' : '' %> ><%= year %></option>
-                            <% } %>
-                        </select>
-                    </span>
-                </p>
+            <div class="block">
+                <a href="/users/<%= info.user.id %>" class="button is-danger">Cancel</a>
             </div>
 
-            <div class="field">
-                <label for="department" class="label">Department</label>
-                <p class="control">
-                    <span class="select">
-                        <select name="department" id="department">
-                            <% for(let department of info.departments) { %>
-                                <option value="<%= department %>" <%=info.user.department===department ? 'selected' : '' %> ><%= department %>
-                                </option>
-                            <% } %>
-                        </select>
-                    </span>
-                </p>
-            </div>
-
-            <div class="field">
-                <label for="phoneNumber" class="label">Phone Number</label>
-                <input type="tel" pattern="[0-9]{10}" class="input" name="phoneNumber" id="phoneNumber" placeholder="Enter Phone Number" 
-                    value="<%= info.user.phoneNumber %>">
-            </div>
-        
-            <div class="field">
-                <button type="submit" class="button is-success is-center">Submit</button>
-            </div>
-        </form>
 
         </div>
-        </div>
-        </div>
-
-    <div class="block">
-        <a href="/users/<%= info.user.id %>" class="button is-danger">Cancel</a>
-    </div>
-    
-
-</div>
 
 </body>
+
 </html>

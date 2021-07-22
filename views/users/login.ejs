@@ -10,53 +10,46 @@
 </head>
 
 <body>
-    <div class="container">
-        <section class="section">
-            <div class="navbar is-fixed-top has-background-info-dark">
-                <div class="navbar-menu">
-                    <div class="navbar-start">
-                        <p class="navbar-item title is-4" style="color: white;">
-                            Eduplus Demo
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <%- include('partials/navbar'); %>
+        <div class="container">
 
-        <div class="block">
-            <div class="columns">
-                <div class="column is-2"></div>
-                <div class="column is-8">
-                    <div class="card">
-                        <div class="card-content">
-                            <p class="title content is-large has-text-centered">
-                                Login User
-                            </p>
 
-                            <form action="/users/login" method="POST">
-                                <div class="field">
-                                    <label for="username" class="label">Username</label>
-                                    <input type="text" name="username" id="username" class="input" placeholder="Enter Name">
-                                </div>
+            <div class="block">
+                <div class="columns">
+                    <div class="column is-2"></div>
+                    <div class="column is-8">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title content is-large has-text-centered">
+                                    Login User
+                                </p>
 
-                                <div class="field">
-                                    <label for="password" class="label">Password</label>
-                                    <input type="password" name="password" id="password" class="input" placeholder="Enter Password">
-                                </div>
+                                <form action="/users/login" method="POST">
+                                    <div class="field">
+                                        <label for="username" class="label">Username</label>
+                                        <input type="text" name="username" id="username" class="input"
+                                            placeholder="Enter Name">
+                                    </div>
 
-                                <div class="field has-text-centered">
-                                    <button class="button is-success is-center">Login</button>
-                                </div>
-                            </form>
+                                    <div class="field">
+                                        <label for="password" class="label">Password</label>
+                                        <input type="password" name="password" id="password" class="input"
+                                            placeholder="Enter Password">
+                                    </div>
+
+                                    <div class="field has-text-centered">
+                                        <button class="button is-success is-center">Login</button>
+                                    </div>
+                                </form>
+                            </div>
+
                         </div>
-
                     </div>
+                    <div class="column is-2"></div>
                 </div>
-                <div class="column is-2"></div>
             </div>
-        </div>
 
-    </div>
+        </div>
 </body>
 
 </html>
