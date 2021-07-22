@@ -3,6 +3,6 @@ const mysql = require('mysql2');
 module.exports = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'mysql@101',
+    password: 'abc123',
     database: 'eduplus'
 });

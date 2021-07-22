@@ -6,7 +6,7 @@ const db = require('./database');
 
 
 const years = ['FY', 'SY', 'TY', 'BE'];
-const departments = ['Computer', 'IT', 'Mechanical', 'E&TC', 'Civil', 'FY'];
+const departments = ['Computer', 'IT', 'Mechanical', 'E&TC', 'Civil'];
 
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
