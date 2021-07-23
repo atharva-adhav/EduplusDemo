@@ -40,9 +40,7 @@ app.post('/users/register', async (req, res) => {
     let queryUserRes;
     try {
         const queryUser = await db.promise().query(`SELECT * FROM usernames WHERE username='${username}'`);
-        console.log(queryUser);
         queryUserRes = queryUser[0];
-        console.log(queryUserRes);
     } catch (error) {
         console.log(error);
     }
@@ -89,9 +87,6 @@ app.post('/users/login', async (req, res) => {
         res.render('users/loginFailed');
     }
     else if (checkUser.length !== 0 && checkUser[0].password !== password) {
-        console.log(checkUser);
-        console.log(`database password = '${ checkUser.password }'`);
-        console.log(`user password = '${ password }'`);
         console.log('Password incorrect');  
         res.render('users/loginFailed');
     }
